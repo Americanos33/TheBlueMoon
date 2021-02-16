@@ -6,6 +6,9 @@ from view import View
 
 import pyautogui
 
+from menu import Menu
+
+pygame.init()
 
 class Game:
     def __init__(self):
@@ -14,10 +17,10 @@ class Game:
         self.WIN = pygame.display.set_mode(self.screen_size)
 
         self._running = False
+        self.inMenu = False
 
         self._viewList = []
         self.initViews()
-
 
     def initViews(self):
 
@@ -33,12 +36,10 @@ class Game:
         print()
         print("[GAME] Starting PyGame...")
 
-        pygame.init()
         pygame.mixer.init()
         pygame.display.set_caption("The Blue Moon")
         #pygame.display.set_icon(pygame.image.load(res.get_res("")))
 
-        self.__init__()
         self._running = True
 
         print("[GAME] Initializing Views...")
@@ -65,3 +66,7 @@ class Game:
         pygame.quit()
 
         print("[GAME] Stopped.")
+
+    def launchBaseMenu(self):
+        
+        menu = Menu(self, 1)

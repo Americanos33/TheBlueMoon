@@ -11,6 +11,10 @@ class View():
 
     def __init__(self, name, game):
 
+        """
+        Initialisation des vues
+        """
+
         self.game = game
         self.bg = pygame.image.load("res/" + name + ".jpg")
         self.bg = pygame.transform.smoothscale(self.bg, self.game.screen_size)
