@@ -8,13 +8,21 @@ import pyautogui
 
 from menu import Menu
 
+
+print()
+print("[GAME] Starting PyGame...")
 pygame.init()
+pygame.mixer.init()
+pygame.display.set_caption("The Blue Moon")
+#pygame.display.set_icon(pygame.image.load(res.get_res("")))    
 
 class Game:
     def __init__(self):
 
         self.screen_size = pyautogui.size()
         self.WIN = pygame.display.set_mode(self.screen_size)
+
+        print(self.screen_size.width, self.screen_size.height)
 
         self._running = False
         self.inMenu = False
@@ -32,13 +40,6 @@ class Game:
         """
         Point d'entrée du jeu.
         """
-
-        print()
-        print("[GAME] Starting PyGame...")
-
-        pygame.mixer.init()
-        pygame.display.set_caption("The Blue Moon")
-        #pygame.display.set_icon(pygame.image.load(res.get_res("")))
 
         self._running = True
 
