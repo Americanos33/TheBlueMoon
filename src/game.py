@@ -68,6 +68,12 @@ class Game:
 
         print("[GAME] Stopped.")
 
+
     def launchBaseMenu(self):
         
         menu = Menu(self, 1)
+
+
+    def loadLevel(self, nblvl):
+
+        
